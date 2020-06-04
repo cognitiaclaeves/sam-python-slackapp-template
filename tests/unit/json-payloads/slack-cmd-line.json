@@ -1,0 +1,94 @@
+    
+{
+    "resource": "/slack",
+    "path": "/slack",
+    "httpMethod": "POST",
+    "headers": {
+        "Accept": "application/json,*/*",
+        "Accept-Encoding": "gzip,deflate",
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Host": "wzbe778cth.execute-api.us-west-1.amazonaws.com",
+        "User-Agent": "Slackbot 1.0 (+https://api.slack.com/robots)",
+        "X-Amzn-Trace-Id": "Root=1-5ed8f98a-f61a85001c4868b82b740c58",
+        "X-Forwarded-For": "54.173.211.45",
+        "X-Forwarded-Port": "443",
+        "X-Forwarded-Proto": "https",
+        "X-Slack-Request-Timestamp": "1591277961",
+        "X-Slack-Signature": "v0=b5750166950deacd0b4529833423fc7ef700e4b8722d07ff71afa2dd9b57a7b8"
+    },
+    "multiValueHeaders": {
+        "Accept": [
+            "application/json,*/*"
+        ],
+        "Accept-Encoding": [
+            "gzip,deflate"
+        ],
+        "Content-Type": [
+            "application/x-www-form-urlencoded"
+        ],
+        "Host": [
+            "wzbe778cth.execute-api.us-west-1.amazonaws.com"
+        ],
+        "User-Agent": [
+            "Slackbot 1.0 (+https://api.slack.com/robots)"
+        ],
+        "X-Amzn-Trace-Id": [
+            "Root=1-5ed8f98a-f61a85001c4868b82b740c58"
+        ],
+        "X-Forwarded-For": [
+            "54.173.211.45"
+        ],
+        "X-Forwarded-Port": [
+            "443"
+        ],
+        "X-Forwarded-Proto": [
+            "https"
+        ],
+        "X-Slack-Request-Timestamp": [
+            "1591277961"
+        ],
+        "X-Slack-Signature": [
+            "v0=b5750166950deacd0b4529833423fc7ef700e4b8722d07ff71afa2dd9b57a7b8"
+        ]
+    },
+    "queryStringParameters": null,
+    "multiValueQueryStringParameters": null,
+    "pathParameters": null,
+    "stageVariables": {
+        "Stage": "dev",
+        "ApiLambdaFunction": "dev-Slack-HelpDesk-Function"
+    },
+    "requestContext": {
+        "resourceId": "4q1lhu",
+        "resourcePath": "/slack",
+        "httpMethod": "POST",
+        "extendedRequestId": "NmvtmF8-SK4FThQ=",
+        "requestTime": "04/Jun/2020:13:39:22 +0000",
+        "path": "/dev/slack",
+        "accountId": "341244757446",
+        "protocol": "HTTP/1.1",
+        "stage": "dev",
+        "domainPrefix": "wzbe778cth",
+        "requestTimeEpoch": 1591277962115,
+        "requestId": "c2c92bb0-b8b2-4dab-a0e9-60fb4edaf3fe",
+        "identity": {
+            "cognitoIdentityPoolId": null,
+            "accountId": null,
+            "cognitoIdentityId": null,
+            "caller": null,
+            "sourceIp": "54.173.211.45",
+            "principalOrgId": null,
+            "accessKey": null,
+            "cognitoAuthenticationType": null,
+            "cognitoAuthenticationProvider": null,
+            "userArn": null,
+            "userAgent": "Slackbot 1.0 (+https://api.slack.com/robots)",
+            "user": null
+        },
+        "domainName": "wzbe778cth.execute-api.us-west-1.amazonaws.com",
+        "apiId": "wzbe778cth"
+    },
+    "body": "token=abIXST3MY2dOo9KyqrPyY0l9&team_id=T04HY6K21&team_domain=compeat&channel_id=D014R1SRSSZ&channel_name=directmessage&user_id=UPG49L0TH&user_name=douglas.norment&command=%2Fit-list-test&text=&response_url=https%3A%2F%2Fhooks.slack.com%2Fcommands%2FT04HY6K21%2F1163195318885%2FVp4f4yPdOGF1dXe96A9E2i5U&trigger_id=1164574347506.4610223069.8448d6a37a82bb6eefd85fb6ea71249d",
+    "isBase64Encoded": false
+}
+            

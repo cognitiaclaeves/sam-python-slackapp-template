@@ -1,0 +1,17 @@
+{
+    "resource": "/slack",
+    "path": "/slack",
+    "httpMethod": "POST",
+    "headers": {
+        "Accept": "application/json,*/*",
+        "Accept-Encoding": "gzip,deflate",
+        "Host": "wzbe778cth.execute-api.us-west-1.amazonaws.com",
+        "User-Agent": "Slackbot 1.0 (+https://api.slack.com/robots)",
+        "X-Amzn-Trace-Id": "Root=1-5ed8f98a-f61a85001c4868b82b740c58",
+        "X-Forwarded-For": "54.173.211.45",
+        "X-Forwarded-Port": "443",
+        "X-Forwarded-Proto": "https",
+        "X-Slack-Request-Timestamp": "1591277961",
+        "X-Slack-Signature": "v0=b5750166950deacd0b4529833423fc7ef700e4b8722d07ff71afa2dd9b57a7b8"
+    }
+}

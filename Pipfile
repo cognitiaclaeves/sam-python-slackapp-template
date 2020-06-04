@@ -6,10 +6,11 @@ name = "pypi"
 [packages]
 "urllib3" = "*"
 "boto3" = "*"
-slackclient = "*"
+"slackclient" = "*"
+"requests" = "*"
 
 [dev-packages]
 pytest = "*"
 
 [requires]
-python_version = "3.6"
+python_version = "3.7"

@@ -1,10 +1,9 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
-PROFILE=beartimeworks # Your AWS profile that you have set up
+PROFILE=compeat-dev # Your AWS profile that you have set up
 
 export AWS_PROFILE=${PROFILE}
 
-echo "Building application"
-bash ./scripts/build.sh
+sh ./scripts/build.sh
 clear
-sam local start-api -t templates/template.yml --env-vars templates/variables.json
+sam local start-api --env-vars templates/variables.json

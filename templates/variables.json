@@ -1,6 +1,6 @@
 {
-    "ApiLambdaFunction": {
-      "SECRETS_NAME": "<REPLACE_ME>",
-      "STAGE": "local-dev"
-    }
+	"ApiLambdaFunction": {
+	  "SECRETS_NAME": "local-dev/slack-helpdesk-creds",
+	  "STAGE": "local-dev"
+	}
   }

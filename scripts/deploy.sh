@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 set -e
 
 if [ -z "$1" ]
@@ -9,15 +9,15 @@ fi
 
 # Aws Variables
 STAGE=$1
-ACCOUNT_ID="<REPLACE_ME>"  # Your AWS account id
-REGION="<REPLACE_ME>"  # The AWS region you are building in e.g. ap-southeast-2
-AWS_PROFILE="<REPLACE_ME>"  # Your AWS profile that you have set up
-BUCKET="<REPLACE_ME>"  # An S3 bucket that can store lambda code in
+# ACCOUNT_ID="<REPLACE_ME>"  # Your AWS account id
+REGION="us-west-1"  # The AWS region you are building in e.g. ap-southeast-2
+# AWS_PROFILE="<REPLACE_ME>"  # Your AWS profile that you have set up
+BUCKET="compeat-${STAGE}-artifacts"  # An S3 bucket that can store lambda code in
 
 # Stack Variables
-SECRETS_NAME="<REPLACE_ME>"  # The name of the secret in secrets manager that stores
-SERVICE="<REPLACE_ME>"  # The name of the service e.g. MySuperCoolSlackApp
-STACK_NAME="<REPLACE_ME>"  # The name of the stack. You could just but ${SERVICE} here
+SECRETS_NAME="${STAGE}/slack-helpdesk-creds"  # The name of the secret in secrets manager that stores
+SERVICE="Slack-HelpDesk"  # The name of the service e.g. MySuperCoolSlackApp
+STACK_NAME="${SERVICE}"  # The name of the stack. You could just use ${SERVICE} here
 
 # File Pathing
 TEMPLATE_FOLDER="templates"  # The folder which your template lives in
@@ -33,28 +33,67 @@ bash ./scripts/test.sh
 echo "Removing Old Deployment Template"
 rm -f ${DIST_FOLDER}/${STAGE}-packaged-template.yml
 
-bash ./scripts/build.sh
+sh ./scripts/build.sh
 
-echo "CloudFormation packaging..."
+# echo "CloudFormation packaging..."
 
 mkdir -p ${DIST_FOLDER}
 
-aws cloudformation package \
+
+# sam deploy --stack-name advproxy-dev-pusher     --capabilities CAPABILITY_IAM     --parameter-overrides Environment=dev --region us-west-1
+
+# pipenv requirements into src/build directory
+# pipenv lock -r > ./src/build/requirements.txt
+
+# sam build -t templates/template.yml
+
+    # sam package --output-template-file packaged.dev.yaml     --s3-bucket compeat-dev-artifacts --s3-prefix compeat-devops-sam-lambda-deployments/advproxy-dev-pusher
+
+    # # The prefix puts the UUID label under a human recognizable directory in S3
+
+    # sam deploy --stack-name advproxy-dev-pusher     --capabilities CAPABILITY_IAM     --parameter-overrides Environment=dev --region us-west-1
+
+
+sam package \
     --region ${REGION} \
     --template-file ${TEMPLATE_FOLDER}/${TEMPLATE_FILE} \
     --output-template-file ${DIST_FOLDER}/${STAGE}-packaged-template.yml \
     --s3-bucket ${BUCKET} \
-    --s3-prefix sam/${SERVICE}
+    --s3-prefix compeat-devops-sam-lambda-deployments/${SERVICE}
 
-echo "CloudFormation deploying..."
-aws cloudformation deploy  \
+# aws cloudformation package \
+#     --region ${REGION} \
+#     --template-file ${TEMPLATE_FOLDER}/${TEMPLATE_FILE} \
+#     --output-template-file ${DIST_FOLDER}/${STAGE}-packaged-template.yml \
+#     --s3-bucket ${BUCKET} \
+#     --s3-prefix compeat-devops-sam-lambda-deployments/${SERVICE}
+
+#     # --template-file ${DIST_FOLDER}/${STAGE}-packaged-template.yml \
+
+
+sam deploy \
     --region ${REGION} \
-    --template-file ${DIST_FOLDER}/${STAGE}-packaged-template.yml \
     --stack-name ${STACK_NAME} \
-    --capabilities CAPABILITY_NAMED_IAM \
-    --parameter-override Stage=${STAGE} SecretsName=${SECRETS_NAME} ServiceName=${SERVICE}
+    --capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM \
+    --s3-bucket ${BUCKET} \
+    --s3-prefix compeat-devops-sam-lambda-deployments/${SERVICE} \
+    --parameter-overrides Stage=${STAGE} SecretsName=${SECRETS_NAME} ServiceName=${SERVICE}
 
-echo "CloudFormation outputs..."
-aws cloudformation describe-stacks \
-    --stack-name ${STACK_NAME} \
-    --query 'Stacks[].Outputs'
+# If stack in roll-back, use: 
+# $ aws cloudformation delete-stack --stack-name Slack-HelpDesk
+
+
+# echo "CloudFormation deploying..."
+# aws cloudformation deploy  \
+#     --region ${REGION} \
+#     --template-file ${DIST_FOLDER}/${STAGE}-packaged-template.yml \
+#     --stack-name ${STACK_NAME} \
+#     --capabilities CAPABILITY_NAMED_IAM \
+#     --parameter-override Stage=${STAGE} SecretsName=${SECRETS_NAME} ServiceName=${SERVICE}
+
+
+
+# echo "CloudFormation outputs..."
+# aws cloudformation describe-stacks \
+#     --stack-name ${STACK_NAME} \
+#     --query 'Stacks[].Outputs'
