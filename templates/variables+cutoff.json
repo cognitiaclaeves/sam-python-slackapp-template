@@ -2,6 +2,6 @@
 	"ApiLambdaFunction": {
 	  "SECRETS_NAME": "local-dev/slack-helpdesk-creds",
 	  "STAGE": "local-dev",
-	  "WHOAMI": "https://wzbe778cth.execute-api.us-west-1.amazonaws.com/dev/slack"
+	  "SLACK_LAMBDA_MASTER_CUTOFF": ".5"
 	}
   }

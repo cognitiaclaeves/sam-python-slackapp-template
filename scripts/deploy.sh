@@ -27,8 +27,11 @@ DIST_FOLDER="dist"  # A folder that the distribution files live in. Just leave t
 # Export our set Aws Profile
 export AWS_PROFILE=${AWS_PROFILE}
 
-# Comment it out if your tests suck :)
-bash ./scripts/test.sh
+if [ "${SLACK_LAMBDA_MASTER_CUTOFF}" == '' ]; then
+    bash ./scripts/test.sh
+else
+    echo "-- \$SLACK_LAMBDA_MASTER_CUTOFF engaged - Skipping tests for emergency deployment ..."
+fi
 
 echo "Removing Old Deployment Template"
 rm -f ${DIST_FOLDER}/${STAGE}-packaged-template.yml

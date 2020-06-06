@@ -1,0 +1,92 @@
+{
+    "resource": "/slack",
+    "path": "/slack",
+    "httpMethod": "POST",
+    "headers": {
+        "Accept": "*/*",
+        "Accept-Encoding": "gzip,deflate",
+        "Content-Type": "application/json",
+        "Host": "wzbe778cth.execute-api.us-west-1.amazonaws.com",
+        "User-Agent": "Slackbot 1.0 (+https://api.slack.com/robots)",
+        "X-Amzn-Trace-Id": "Root=1-5eda3bff-f5cfc615f035997485507ca3",
+        "X-Forwarded-For": "34.205.143.80",
+        "X-Forwarded-Port": "443",
+        "X-Forwarded-Proto": "https",
+        "X-Slack-Request-Timestamp": "1591360510",
+        "X-Slack-Signature": "v0=eec0a157cfb16245bdcd447a16a0e488595d482d117e5c2d452f981edf8d0ad8"
+    },
+    "multiValueHeaders": {
+        "Accept": [
+            "*/*"
+        ],
+        "Accept-Encoding": [
+            "gzip,deflate"
+        ],
+        "Content-Type": [
+            "application/json"
+        ],
+        "Host": [
+            "wzbe778cth.execute-api.us-west-1.amazonaws.com"
+        ],
+        "User-Agent": [
+            "Slackbot 1.0 (+https://api.slack.com/robots)"
+        ],
+        "X-Amzn-Trace-Id": [
+            "Root=1-5eda3bff-f5cfc615f035997485507ca3"
+        ],
+        "X-Forwarded-For": [
+            "34.205.143.80"
+        ],
+        "X-Forwarded-Port": [
+            "443"
+        ],
+        "X-Forwarded-Proto": [
+            "https"
+        ],
+        "X-Slack-Request-Timestamp": [
+            "1591360510"
+        ],
+        "X-Slack-Signature": [
+            "v0=eec0a157cfb16245bdcd447a16a0e488595d482d117e5c2d452f981edf8d0ad8"
+        ]
+    },
+    "queryStringParameters": null,
+    "multiValueQueryStringParameters": null,
+    "pathParameters": null,
+    "stageVariables": {
+        "Stage": "dev",
+        "ApiLambdaFunction": "dev-Slack-HelpDesk-Function"
+    },
+    "requestContext": {
+        "resourceId": "4q1lhu",
+        "resourcePath": "/slack",
+        "httpMethod": "POST",
+        "extendedRequestId": "Np5P3GKHSK4FvXQ=",
+        "requestTime": "05/Jun/2020:12:35:11 +0000",
+        "path": "/dev/slack",
+        "accountId": "341244757446",
+        "protocol": "HTTP/1.1",
+        "stage": "dev",
+        "domainPrefix": "wzbe778cth",
+        "requestTimeEpoch": 1591360511017,
+        "requestId": "a06b5dae-ef22-4e53-94c5-b24cbf5bbb14",
+        "identity": {
+            "cognitoIdentityPoolId": null,
+            "accountId": null,
+            "cognitoIdentityId": null,
+            "caller": null,
+            "sourceIp": "34.205.143.80",
+            "principalOrgId": null,
+            "accessKey": null,
+            "cognitoAuthenticationType": null,
+            "cognitoAuthenticationProvider": null,
+            "userArn": null,
+            "userAgent": "Slackbot 1.0 (+https://api.slack.com/robots)",
+            "user": null
+        },
+        "domainName": "wzbe778cth.execute-api.us-west-1.amazonaws.com",
+        "apiId": "wzbe778cth"
+    },
+    "body": "{\"token\":\"abIXST3MY2dOo9KyqrPyY0l9\",\"team_id\":\"T04HY6K21\",\"api_app_id\":\"A015G0J57UY\",\"event\":{\"bot_id\":\"B014SK0RRT5\",\"type\":\"message\",\"text\":\"?won egassem siht ssecorp uoy lliW\",\"user\":\"U014BLFS3CP\",\"ts\":\"1591360510.006500\",\"team\":\"T04HY6K21\",\"bot_profile\":{\"id\":\"B014SK0RRT5\",\"deleted\":false,\"name\":\"HelpDesk\",\"updated\":1591201953,\"app_id\":\"A015G0J57UY\",\"icons\":{\"image_36\":\"https:\\/\\/a.slack-edge.com\\/80588\\/img\\/plugins\\/app\\/bot_36.png\",\"image_48\":\"https:\\/\\/a.slack-edge.com\\/80588\\/img\\/plugins\\/app\\/bot_48.png\",\"image_72\":\"https:\\/\\/a.slack-edge.com\\/80588\\/img\\/plugins\\/app\\/service_72.png\"},\"team_id\":\"T04HY6K21\"},\"channel\":\"D014R1SRSSZ\",\"event_ts\":\"1591360510.006500\",\"channel_type\":\"im\"},\"type\":\"event_callback\",\"event_id\":\"Ev0159JJ1KND\",\"event_time\":1591360510,\"authed_users\":[\"U014BLFS3CP\"]}",
+    "isBase64Encoded": false
+}
